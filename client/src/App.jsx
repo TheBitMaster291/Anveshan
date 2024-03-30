@@ -6,11 +6,14 @@ import Signin from './pages/Signin';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
 import ContactUs from './pages/ContactUs';
+import Header from './components/header';
+
 
 
 const App = () => {
   return (
    <BrowserRouter>
+    <Header/>
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/sign-in" element={<Signin/>}/>
