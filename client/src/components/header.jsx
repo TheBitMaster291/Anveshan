@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaAngleRight, FaBars, FaCalendarAlt, FaHeadset, FaHome, FaInfoCircle, FaUser } from "react-icons/fa";
+import {
+  FaAngleRight,
+  FaBars,
+  FaCalendarAlt,
+  FaHeadset,
+  FaHome,
+  FaInfoCircle,
+  FaUser,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -50,98 +58,121 @@ const Header = () => {
         {showSideMenu && (
           <div
             ref={sideMenuRef}
-            className="fixed inset-y-0 left-0 w-64 bg-gray-800 text-white p-4"
+            className="fixed inset-y-0 left-0 w-64 bg-gray-800 text-white p-4 rounded-tr-3xl"
           >
             {/* User details */}
             <div className="mb-4">
-              {/* Display user details here */}
-              <p>User Details</p>
+              {/* Box element for user details */}
+              <div style={{ backgroundColor: '#E17343' }} className="p-8 rounded-lg rounded-tr-3xl">
+                {/* Profile picture */}
+                <img
+                  src="/profile.png"
+                  alt="Profile"
+                  className="w-15 h-15 rounded-lg mx-auto mb-2"
+                />
+                {/* Name */}
+                <p className="text-white text-center font-semibold mb-1">
+                  Emily Smith
+                </p>
+                {/* Contact number */}
+                <p className="text-gray-300 font-semibold text-center">123-456-7890</p>
+              </div>
             </div>
             {/* Navigation Links */}
-            <ul>
-              <div className="flex flex-col justify-between items-center">
-                <Link
-                  to="/"
-                  onClick={() => setShowSideMenu(false)}
-                  className="flex items-center gap-12"
-                >
-                  <FaHome
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                  <span className="py-2">Home</span>
-                  <FaAngleRight
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                </Link>
-                <div
-                  style={{ borderBottom: "2px solid #E17343", width: "100%" }}
-                ></div>
-                {/* Horizontal line */}
+            <ul className="flex flex-col items-center">
+              <div className="mb-20">
+                <div className="flex flex-col justify-between items-center">
+                  <Link
+                    to="/"
+                    onClick={() => setShowSideMenu(false)}
+                    className="flex items-center gap-12"
+                  >
+                    <FaHome
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                    <span className="py-2">Home</span>
+                    <FaAngleRight
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                  </Link>
+                  <div
+                    style={{ borderBottom: "2px solid #E17343", width: "100%" }}
+                  ></div>
+                  {/* Horizontal line */}
+                </div>
+                <div className="flex flex-col justify-between items-center">
+                  <Link
+                    to="/events"
+                    onClick={() => setShowSideMenu(false)}
+                    className="flex items-center gap-12"
+                  >
+                    <FaCalendarAlt
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                    <span className="py-2">Events</span>
+                    <FaAngleRight
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                  </Link>
+                  <div
+                    style={{ borderBottom: "2px solid #E17343", width: "100%" }}
+                  ></div>
+                  {/* Horizontal line */}
+                </div>
+                <div className="flex flex-col justify-between items-center">
+                  <Link
+                    to="/about-us"
+                    onClick={() => setShowSideMenu(false)}
+                    className="flex items-center gap-9"
+                  >
+                    <FaInfoCircle
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                    <span className="py-2">About us</span>
+                    <FaAngleRight
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                  </Link>
+                  <div
+                    style={{ borderBottom: "2px solid #E17343", width: "100%" }}
+                  ></div>
+                  {/* Horizontal line */}
+                </div>
+                <div className="flex flex-col justify-between items-center">
+                  <Link
+                    to="/contact-us"
+                    onClick={() => setShowSideMenu(false)}
+                    className="flex items-center gap-10"
+                  >
+                    <FaHeadset
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                    <span className="py-2">Support</span>
+                    <FaAngleRight
+                      className="h-6 w-6 fill-current"
+                      style={{ color: "#E17343" }}
+                    />
+                  </Link>
+                  <div
+                    style={{ borderBottom: "2px solid #E17343", width: "100%" }}
+                  ></div>
+                  {/* Horizontal line */}
+                </div>
               </div>
-              <div className="flex flex-col justify-between items-center">
-                <Link
-                  to="/events"
-                  onClick={() => setShowSideMenu(false)}
-                  className="flex items-center gap-12"
+              <div style={{ marginBottom: "20px" }}>
+                <button
+                  type="button"
+                  className="text-black font-semibold bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-600 rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
-                  <FaCalendarAlt
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                  <span className="py-2">Events</span>
-                  <FaAngleRight
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                </Link>
-                <div
-                  style={{ borderBottom: "2px solid #E17343", width: "100%" }}
-                ></div>
-                {/* Horizontal line */}
-              </div>
-              <div className="flex flex-col justify-between items-center">
-                <Link
-                  to="/about-us"
-                  onClick={() => setShowSideMenu(false)}
-                  className="flex items-center gap-9"
-                >
-                  <FaInfoCircle
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                  <span className="py-2">About us</span>
-                  <FaAngleRight
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                </Link>
-                <div
-                  style={{ borderBottom: "2px solid #E17343", width: "100%" }}
-                ></div>
-                {/* Horizontal line */}
-              </div>
-              <div className="flex flex-col justify-between items-center">
-                <Link
-                  to="/contact-us"
-                  onClick={() => setShowSideMenu(false)}
-                  className="flex items-center gap-10"
-                >
-                  <FaHeadset
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                  <span className="py-2">Support</span>
-                  <FaAngleRight
-                    className="h-6 w-6 fill-current"
-                    style={{ color: "#E17343" }}
-                  />
-                </Link>
-                <div
-                  style={{ borderBottom: "2px solid #E17343", width: "100%" }}
-                ></div>
-                {/* Horizontal line */}
+                  Register
+                </button>
               </div>
             </ul>
           </div>
